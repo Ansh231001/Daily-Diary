@@ -1,0 +1,12 @@
+<%-include('partials/header'); -%>
+
+
+<h1>Home</h1>
+<p><%=homeStartingContent%></p>
+<% posts.forEach(function(post){ %>
+   <h1><%=post.title%></h1>
+   <%var length = 50;%>
+   <%var truncated_string = (post.Body).substring(0,length)%>
+   <p><%=truncated_string + "..."%> <a href="/posts/<%=post.title%> ">Read More</a> </p>
+<% }) %>
+<%-include('partials/footer');-%>
